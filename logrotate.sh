@@ -2,7 +2,7 @@
 
 #!/bin/sh
 
-# Log directory
+# De adaugat PATH-ul
 LOGDIR=/data/logs
 
 # Maximum number of archive logs to keep
