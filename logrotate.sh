@@ -38,5 +38,5 @@ if [ -f $LOGDIR/$LOGFILE ]; then
 cat $LOGDIR/$LOGFILE | gzip > $LOGDIR/$LOGFILE.0.gz
 cat /dev/null > $LOGDIR/$LOGFILE
 fi
-
+echo -e "---===Made by Catalin===---"
 done
