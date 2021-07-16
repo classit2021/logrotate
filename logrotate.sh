@@ -1,18 +1,17 @@
-
-
-#!/bin/sh
+#! /bin/bash
 
 # De adaugat PATH-ul
-LOGDIR=/data/logs
+LOGDIR=/var/log/
 
 # Maximum number of archive logs to keep
 MAXNUM=30
 
-#Log files to be handled in that log directory 
-files=(access.log error.log)
+#Log files to be handled in that log directory
+files=(alternatives.log)
 
 for LOGFILE in "${files[@]}"
-do 
+
+do
 
 ## Check if the last log archive exists and delete it.
 if [ -f $LOGDIR/$LOGFILE.$MAXNUM.gz ]; then
@@ -39,4 +38,5 @@ cat $LOGDIR/$LOGFILE | gzip > $LOGDIR/$LOGFILE.0.gz
 cat /dev/null > $LOGDIR/$LOGFILE
 fi
 echo -e "---===Made by Catalin===---"
+
 done
